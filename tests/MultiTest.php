@@ -18,6 +18,7 @@ class User
     public function setName(string $name)
     {
         $this->name = $name;
+        return $this;
     }
 
     public function save()
@@ -26,12 +27,13 @@ class User
     }
 }
 
-it('Simple Multi', function () {
+it('User Multi', function () {
     $user = new User('no name');
 
     expect(
         Multi::create('user', $user)
-        ->add('saveUser', fn(User $user) => $user->save())
-        ->run(fn(bool $saveUser) => $saveUser)
+        ->add('createUser', fn(User $user) => $user->save())
+        ->add('updateUser', fn(User $user) => $user->setName('one name')->save())
+        ->run(fn(bool $createUser, bool $updateUser) => $createUser === $updateUser)
     )->toBeTrue();
 });
