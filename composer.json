@@ -1,0 +1,21 @@
+{
+    "name": "accolon/php-functional",
+    "description": "Tools php functional programming",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jvrcavalcanti",
+            "email": "jonnyvictor01@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "pestphp/pest": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Accolon\\Functional\\": "src/"
+        }
+    }
+}
