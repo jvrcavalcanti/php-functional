@@ -16,6 +16,12 @@
     "autoload": {
         "psr-4": {
             "Accolon\\Functional\\": "src/"
-        }
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "scripts": {
+        "test": "php8.0 ./vendor/bin/pest ."
     }
 }

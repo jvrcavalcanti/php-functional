@@ -2,6 +2,8 @@
 
 namespace Accolon\Functional;
 
+use Accolon\Functional\Traits\ResolveAction;
+
 class Pipe
 {
     use ResolveAction;
@@ -11,7 +13,7 @@ class Pipe
         //
     }
 
-    public function on(array|string|callable $action, mixed ...$args): self
+    public function run(array|string|callable $action, mixed ...$args): self
     {
         $this->value = $this->resolveAction($action)($this->value, ...$args);
         return $this;

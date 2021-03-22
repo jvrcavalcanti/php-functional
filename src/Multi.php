@@ -2,6 +2,8 @@
 
 namespace Accolon\Functional;
 
+use Accolon\Functional\Traits\ResolveAction;
+
 class Multi
 {
     use ResolveAction;

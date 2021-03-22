@@ -1,6 +1,6 @@
 <?php
 
-namespace Accolon\Functional;
+namespace Accolon\Functional\Traits;
 
 trait ResolveAction
 {
